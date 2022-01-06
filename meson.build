@@ -9,9 +9,9 @@ conf_inc = include_directories('internal')
 
 versiondata = configuration_data()
 versiondata.set('PCRE_MAJOR', 8)
-versiondata.set('PCRE_MINOR', 37)
+versiondata.set('PCRE_MINOR', 45)
 versiondata.set('PCRE_PRERELEASE', '')
-versiondata.set('PCRE_DATE', '2015-04-28')
+versiondata.set('PCRE_DATE', '2021-06-15')
 configure_file(input : 'pcre.h.in',
   output : 'pcre.h',
   configuration : versiondata)
