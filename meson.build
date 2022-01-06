@@ -66,15 +66,6 @@ pcre_posix = build_target('pcreposix',
   target_type : libtype,
   include_directories : conf_inc)
 
-pcretest = executable('pcretest',
-  'pcretest.c', 'pcre_printint.c',
-  c_args : '-DHAVE_CONFIG_H',
-  link_with : [pcre8, pcre_posix],
-  include_directories : conf_inc,
-)
-# Running test not added yet because it is
-# complicated.
-
 pcre_dep = declare_dependency(link_with : pcre8,
   include_directories : include_directories('.'),
 )
