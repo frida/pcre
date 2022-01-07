@@ -2,6 +2,11 @@ project('pcre', 'c')
 
 cc = meson.get_compiler('c')
 
+# Suppress all compiler warnings when we're a subproject
+if meson.is_subproject() and cc.get_argument_syntax() != 'msvc'
+  add_project_arguments('-w', language : 'c')
+endif
+
 # put config.h in an internal directory so
 # users don't include it by accident
 subdir('internal')
